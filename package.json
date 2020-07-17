@@ -1,0 +1,14 @@
+{
+  "name": "Gray",
+  "version": "1.0.0",
+  "description": "solo-front",
+  "main": "index.js",
+  "repository": "git@github.com:JaneGe/solo-front.git",
+  "author": "zhangjian <gary-zhang@starlinke.com>",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "webpack": "^4.43.0",
+    "webpack-merge": "^5.0.9"
+  }
+}
