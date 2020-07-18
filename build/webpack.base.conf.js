@@ -1,11 +1,11 @@
-const path = require('path')
-const config = require('./config')
-const vueLoaderConfig = require('./vue-loader.conf')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+var path = require('path')
+var config = require('./config')
+var vueLoaderConfig = require('./vue-loader.conf')
+var VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-const isProduction = process.env.NODE_ENV === 'production'
+var isProduction = process.env.NODE_ENV === 'production'
 
-function resolvePath (dir) {
+function resolvePath(dir) {
     return path.join(__dirname, '..', dir)
 }
 

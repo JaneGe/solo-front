@@ -1,4 +1,4 @@
-const path = require('path')
+var path = require('path')
 
 module.exports = {
     build: {
@@ -8,8 +8,8 @@ module.exports = {
         sourceMap: false,
     },
     dev: {
-        env: resolve('./dev.env'),
-        port: 3000,
+        env: path.resolve(__dirname, './dev.env'),
+        port: 8080,
         autoOpenBrowser: true,
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
