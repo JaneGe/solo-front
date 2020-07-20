@@ -10,15 +10,10 @@ var config = require('./config')
 
 module.exports = merge(webpackBaseConfig, {
     devServer: {
-        publicPath: path.join(__dirname, "dist"),
-        compress: true,
-        port: config.dev.port,
-        open: config.dev.autoOpenBrowser,
         hot: true,
-        inline: true,
-        quiet: true
+        inline: true
     },
-    devtool: '#cheape-source-map',
+    devtool: '#cheap-source-map',
     plugins: [
         new webpack.DefinePlugin({
             'process.env': config.dev.env
@@ -28,6 +23,7 @@ module.exports = merge(webpackBaseConfig, {
         new HtmlWebpackPlugin({
             index: 'index.html',
             template: 'index.html',
+            favicon: path.join(__dirname, '../public/favicon.ico'),
             inject: true
         })
     ]

@@ -1,8 +1,9 @@
 <template>
-  <div>SOLO SMART</div>
+  <div>SOLO SMART APP</div>
 </template>
 <script>
 export default {
+  name: 'App',
   data() {
     return {}
   }
