@@ -12,10 +12,15 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
     publicPath: webpackDevConfig.output.publicPath,
     quiet: true
 })
-var hotMiddleware = require('webpack-hot-middleware')(compiler)
+
+var hotMiddleware = require('webpack-hot-middleware')(compiler, {
+    log: () => {
+    }
+})
 
 compiler.plugin('compilation', function (compilation) {
     compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
+        console.log(0)
         cb()
     })
 });
@@ -24,11 +29,13 @@ compiler.plugin('compilation', function (compilation) {
 // webpack-dev-middleware 引用了http-proxy-middleware包
 // var proxyMiddleware = require('http-proxy-middleware')
 
+app.use(devMiddleware)
+app.use(hotMiddleware)
+
 // 设置静态资源虚拟目录
 app.use(path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory), express.static('./public'))
 
-app.use(devMiddleware)
-app.use(hotMiddleware)
+
 
 
 var uri = 'http://localhost:' + config.dev.port

@@ -7,8 +7,15 @@ var FriendlyErrorPlugin = require('friendly-errors-webpack-plugin')
 var webpackBaseConfig = require('./webpack.base.conf')
 var config = require('./config')
 
+Object.keys(webpackBaseConfig.entry).forEach(function (name) {
+    webpackBaseConfig.entry[name] = ['./build/dev-client'].concat(webpackBaseConfig.entry[name])
+})
+
+console.log(webpackBaseConfig.entry)
+
 
 module.exports = merge(webpackBaseConfig, {
+    mode: 'development',
     devServer: {
         hot: true,
         inline: true

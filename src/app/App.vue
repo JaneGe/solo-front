@@ -1,5 +1,5 @@
 <template>
-  <div>SOLO SMART APP</div>
+  <div>SOLO SMART APP！1</div>
 </template>
 <script>
 export default {
