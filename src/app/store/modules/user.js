@@ -24,7 +24,9 @@ const user = {
         },
     },
     actions: {
-
+        SetUserAvatar({ commit }, value) {
+            commit('SET_AVATAR', value)
+        }
     }
 }
 

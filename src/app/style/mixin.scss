@@ -1,0 +1,38 @@
+$common-left: '10px';
+$common-right: '10px';
+
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+// 基于父元素水平垂直居中
+@mixin positionCenterMiddle($position: 'absolute') {
+    position: $position;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(50%, 50%, 0);
+}
+
+// 基于父元素垂直居中
+@mixin positionMiddle($position: 'absolute') {
+    position: $position;
+    top: 50%;
+    transform: translate3d(0, 50%, 0);
+}
+
+// 基于父元素指定left垂直居中
+@mixin positionMiddle($position: 'absolute', $left: $common-left) {
+    position: $position;
+    top: 50%;
+    left: $left;
+    transform: translate3d(0, 50%, 0);
+}
+
+// 基于父元素指定right垂直居中
+@mixin positionMiddle($position: 'absolute', $right: $common-right) {
+    position: $position;
+    top: 50%;
+    right: $right;
+    transform: translate3d(0, 50%, 0);
+}

@@ -5,7 +5,7 @@ var VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 var isProduction = process.env.NODE_ENV === 'production'
 
-function resolvePath (dir) {
+function resolvePath(dir) {
     return path.join(__dirname, '..', dir)
 }
 
@@ -24,8 +24,7 @@ module.exports = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': resolvePath('src'),
-            'app': resolvePath('src/app'),
+            '@': resolvePath('src')
         }
     },
     plugins: [
